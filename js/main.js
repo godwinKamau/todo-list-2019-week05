@@ -1,4 +1,5 @@
 document.querySelector('#new-task').addEventListener('click',newRow)
+document.querySelector('#del-task').addEventListener('click',delRow)
 
 // Obtain relevant interface elements
 const bodySection = document.querySelectorAll("tbody")[0];
@@ -10,7 +11,7 @@ function newRow() {
 
     console.log('started')
     let newCell = row.insertCell(0)
-    newCell.innerHTML = '<input type="checkbox">'
+    newCell.innerHTML = '<input type="checkbox" class="check">'
 
     let newCell2 = row.insertCell(1)
     newCell2.textContent = document.getElementById('new-todo').value
@@ -28,5 +29,15 @@ function newRow() {
     // let newText = document.getElementById('new-todo').value
     // let insertText = document.createTextNode(newText)
     // task.appendChild(insertText)
+}
 
+function delRow() {
+    const checks = document.querySelectorAll('.check')
+    
+    for (let i=0; i < checks.length; i++) {
+        if (checks[i].checked === true) {
+            checks[i].closest('tr').remove()
+        }
+    }
+    
 }
