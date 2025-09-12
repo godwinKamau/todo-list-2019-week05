@@ -7,7 +7,6 @@ const bodySection = document.querySelectorAll("tbody")[0];
 
 function newRow() {
     const row = bodySection.rows.item(bodySection.rows.length - 1); // Select the first row of the body section
-    // const cells = row.cells; // The collection is live, therefore always up-to-date
 
     console.log('started')
     let newCell = row.insertCell(0)
@@ -22,13 +21,6 @@ function newRow() {
     newCell3.className = 'dueDate'
 
     bodySection.insertRow()
-    // let table = document.getElementById('to-do')
-    // let newRow = table.insertRow()
-
-    // let task = newRow.insertCell()
-    // let newText = document.getElementById('new-todo').value
-    // let insertText = document.createTextNode(newText)
-    // task.appendChild(insertText)
 }
 
 function delRow() {
@@ -38,6 +30,5 @@ function delRow() {
         if (checks[i].checked === true) {
             checks[i].closest('tr').remove()
         }
-    }
-    
+    }    
 }
