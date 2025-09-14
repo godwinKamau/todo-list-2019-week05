@@ -102,7 +102,7 @@ video {
   max-width: 100%;
 }
 
-input[type="text"] {
+input[type="text"], input[type="date"] {
     padding:.5rem;
     background: black;
     color:green;

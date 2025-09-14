@@ -5,10 +5,14 @@ document.querySelector('#del-task').addEventListener('click',delRow)
 const bodySection = document.querySelectorAll("tbody")[0];
 
 
+const dateControl = document.querySelector('input[type="date"]')
+
+const utc = new Date().toJSON().slice(0,10)
+dateControl.min = utc
+
 function newRow() {
     const row = bodySection.rows.item(bodySection.rows.length - 1); // Select the first row of the body section
 
-    console.log('started')
     let newCell = row.insertCell(0)
     newCell.innerHTML = '<input type="checkbox" class="check">'
 
@@ -16,9 +20,23 @@ function newRow() {
     newCell2.textContent = document.getElementById('new-todo').value
     newCell2.className = 'task'
 
-    let newCell3 = row.insertCell(2)
-    newCell3.textContent = document.getElementById('new-due').value
-    newCell3.className = 'dueDate'
+    const dateCheck = document.getElementById('new-due').value
+    const dateNumbers = dateCheck.split('-')
+    const utcList = utc.split('-')
+    console.log(dateNumbers,utcList)
+    
+
+    if (Number(dateNumbers[1]) <= Number(utcList[1]) && Number(dateNumbers[2]) < Number(utcList[2])) {
+        let newCell3 = row.insertCell(2)
+        newCell3.textContent = 'fuck!'
+    } else {
+        let newCell3 = row.insertCell(2)
+        newCell3.textContent = document.getElementById('new-due').value
+        newCell3.className = 'dueDate'
+    }
+    // let newCell3 = row.insertCell(2)
+    // newCell3.textContent = document.getElementById('new-due').value
+    // newCell3.className = 'dueDate'
 
     bodySection.insertRow()
 }
