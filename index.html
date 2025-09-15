@@ -7,33 +7,35 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <video autoplay muted loop>
-				<source src="assets/8604260-uhd_3840_2160_30fps.mp4" type="video/mp4">
-		</video>
-        <table id="to-do">
-            <thead>
-                <tr>
-                    <th scope ="col">Checked</th>
-                    <th scope="col">What it is?</th>
-                    <th scope="col">Due Date</th>
-                    <td><button id="del-task">Delete Checked Items</button></td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
+        <section class="container">
+            <video autoplay muted loop>
+                    <source src="assets/8604260-uhd_3840_2160_30fps.mp4" type="video/mp4">
+            </video>
+            <table id="to-do">
+                <thead>
+                    <tr>
+                        <th scope ="col">Checked</th>
+                        <th scope="col">What it is?</th>
+                        <th scope="col">Due Date</th>
+                        <td><button id="del-task">Delete Checked Items</button></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
 
-                </tr>
-                
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td></td>
-                    <td><input type="text" id="new-todo" placeholder="Enter task"></td>
-                    <td><input type="date" id="new-due"></td>
-                    <td><button id="new-task">Add New Task</button></td>
-                </tr>
-            </tfoot>
-        </table>
+                    </tr>
+                    
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td><input type="text" id="new-todo" placeholder="Enter task"></td>
+                        <td><input type="date" id="new-due"></td>
+                        <td><button id="new-task">Add New Task</button></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
     <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>

@@ -39,6 +39,7 @@ function newRow() {
     // newCell3.className = 'dueDate'
 
     bodySection.insertRow()
+    document.getElementById('new-todo').value = ''
 }
 
 function delRow() {
