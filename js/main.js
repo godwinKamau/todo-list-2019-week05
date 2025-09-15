@@ -1,5 +1,7 @@
 document.querySelector('#new-task').addEventListener('click',newRow)
 document.querySelector('#del-task').addEventListener('click',delRow)
+document.querySelector('#new-task2').addEventListener('click',newRow)
+document.querySelector('#del-task2').addEventListener('click',delRow)
 
 // Obtain relevant interface elements
 const bodySection = document.querySelectorAll("tbody")[0];
@@ -28,7 +30,7 @@ function newRow() {
 
     if (Number(dateNumbers[1]) <= Number(utcList[1]) && Number(dateNumbers[2]) < Number(utcList[2])) {
         let newCell3 = row.insertCell(2)
-        newCell3.textContent = 'fuck!'
+        newCell3.textContent = 'f*ck!'
     } else {
         let newCell3 = row.insertCell(2)
         newCell3.textContent = document.getElementById('new-due').value
